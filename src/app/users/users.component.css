@@ -1,0 +1,12 @@
+.card {
+  width:  40%;
+  position: relative;
+  left: 30%;
+  top: 50px;
+}
+
+h1 {
+  position: relative;
+  top: 20px;
+  left: 30%;
+}

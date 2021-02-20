@@ -1,0 +1,40 @@
+<h1>Crear Usuario</h1>
+
+
+
+   <div class="card">
+    <div class="card-body">
+      <label for=""> Su Usuario </label>
+      <input type="text"
+       [(ngModel)]="nombreUsuario"
+        placeholder="Ingrese su Usuario" class="form-control"
+      >
+
+      <label for=""> Su nombre </label>
+      <input type="text"
+       [(ngModel)]="nombreCompleto"
+        placeholder="Ingrese su Nombre" class="form-control"
+      >
+
+      <label for=""> Su Email </label>
+      <input type="text"
+        [(ngModel)]="email"
+        placeholder="Ingrese su Email" class="form-control"
+      >
+
+      <label for=""> Su telefono </label>
+      <input type="text"
+        [(ngModel)]="telefono"
+        placeholder="Ingrese su telefono" class="form-control"
+      >
+      <br>
+
+      <button type="button" class="btn btn-primary btn-sm btn-block "  (click)="crear()" > Crear </button>
+
+    </div>
+  </div>
+
+
+
+
+
