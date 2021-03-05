@@ -1,1 +1,133 @@
-<p>rols works!</p>
+<div class="container">
+  <h1  >Lista de Rols</h1>
+  <br>
+  <hr>
+</div>
+<br>
+
+  <!--Abrir Modal-->
+    <ng-template #contenido let-modal>
+      <div class="modal-header">
+        <h4>Crear Usuario</h4>
+        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+          <span aria-hidden="true" >&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form >
+            <div class="form-group">
+              <label for="nombreUsuario"><b>Nombre Usuario:</b> </label>
+              <input type="text" name="nombreUsuario" class="form-control"
+                    placeholder="Usuario 1" >
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="nombreCompleto"><b>Nombre Completo:</b> </label>
+              <input type="text" name="nombreCompleto" class="form-control"
+                     placeholder="Andres Lopez"  >
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="email"><b>Email:</b></label>
+              <input type="text" name="email" class="form-control"
+                      placeholder="example@gmail.com">
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="telefono"><b>Telefono:</b></label>
+              <input type="text" name="telefono" class="form-control"
+                     placeholder="09xxxxxxxx" >
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="edad"><b>Edad:</b></label>
+              <input type="text" name="edad" class="form-control"
+                     placeholder="55" >
+            </div>
+
+
+
+          </form>
+      </div>
+    </ng-template>
+  <!--Cerrar Modal
+    <div class="row">
+        <div class="col-4">
+          <button id="mdl" type="button" class="btn btn-primary" (click)="modal.open(contenido)" >
+            <i class="far fa-plus-circle"></i> Crear Nuevo Rol</button>
+        </div>
+        <div class="col-4">
+
+        </div>
+
+    </div>-->
+
+<br>
+<br>
+<div class="container ">
+  <table class="table table-hover  ">
+    <thead class="table-dark">
+      <tr>
+        <td scope="col">#</td>
+        <td scope="col">Descripcion</td>
+        <td id="tl" colspan=2  >Acciones</td>
+      </tr>
+    </thead>
+    <tbody>
+        <tr scrope="row" *ngFor="let cargo of rols"  >
+          <td> {{cargo.id}} </td>
+          <td> <i class="fas fa-user"></i>  {{cargo.rol}} </td>
+         <td > <button class="btn btn-warning" >
+                  <i class="fas fa-edit"></i> Editar</button>
+            </td>
+            <td>
+
+              <button  class="btn btn-danger"  >
+                 <i class="fas fa-trash-alt"></i> Borrar</button>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+</div>
+
+
+
+
+
+   <!--<div class="card">
+    <div class="card-body">
+      <label for=""> Su Usuario </label>
+      <input type="text"
+       [(ngModel)]="nombreUsuario"
+        placeholder="Ingrese su Usuario" class="form-control"
+      >
+
+      <label for=""> Su nombre </label>
+      <input type="text"
+       [(ngModel)]="nombreCompleto"
+        placeholder="Ingrese su Nombre" class="form-control"
+      >
+
+      <label for=""> Su Email </label>
+      <input type="text"
+        [(ngModel)]="email"
+        placeholder="Ingrese su Email" class="form-control"
+      >
+
+      <label for=""> Su telefono </label>
+      <input type="text"
+        [(ngModel)]="telefono"
+        placeholder="Ingrese su telefono" class="form-control"
+      >
+      <br>
+
+      <button type="button" class="btn btn-primary btn-sm btn-block "  (click)="crear()" > Crear </button>
+
+    </div>
+  </div>-->
+
+
+
+
+
+

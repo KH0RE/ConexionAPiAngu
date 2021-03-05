@@ -7,16 +7,31 @@ import { Users } from '../models/users';
 })
 export class UsersService {
 
-  private url = 'http://localhost:8000/api/'
+
+
+  private url = 'http://localhost:8000/api/user2'
 
   constructor( private http: HttpClient ) { }
 
   crearUser(data: any){
-    return this.http.post(this.url + 'user2', data);
+    return this.http.post(this.url, data);
   }
 
-  getUsers(): Observable<Object>{
-    return this.http.get<Users[]>(`${this.url}/user2`);
+  getUsers():Observable<Users[]> {
+    return this.http.get<Users[]>(this.url);
+  }
+
+  deleteUsers(id: string) {
+    return this.http.delete(`${this.url}/${id}`);
+  }
+
+
+  getUsersBy(id: string) {
+    return this.http.get(`${this.url}/${id}`);
+  }
+
+  updateUsers(id: string, data: any){
+    return this.http.put(`${this.url}/${id}`, data);
   }
 
 }

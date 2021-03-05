@@ -1,0 +1,56 @@
+
+<div class="container">
+  <h1  >Editar Usuario</h1>
+  <br>
+  <hr>
+</div>
+
+<div class="card">
+  <br>
+  <div class="container">
+
+      <div class="form-group" >
+
+          <div >
+            <label for="nombreUsuario"><b>Nombre Usuario:</b> </label>
+            <input type="text" name="nombreUsuario" class="form-control"
+                   [(ngModel)]="users.nombreUsuario">
+          </div>
+          <br>
+          <div >
+            <label for="nombreCompleto"><b>Nombre Completo:</b> </label>
+            <input type="text" name="nombreCompleto" class="form-control"
+                   [(ngModel)]="users.nombreCompleto" >
+          </div>
+          <br>
+          <div >
+            <label for="email"><b>Email:</b></label>
+            <input type="text" name="email" class="form-control"
+                    [(ngModel)]="users.email">
+          </div>
+          <br>
+          <div >
+            <label for="telefono"><b>Telefono:</b></label>
+            <input type="text" name="telefono" class="form-control"
+                   [(ngModel)]="users.telefono">
+          </div>
+          <br>
+          <div >
+            <label for="edad"><b>Edad:</b></label>
+            <input type="text" name="edad" class="form-control"
+                   [(ngModel)]="users.edad">
+          </div>
+          <br>
+          <br>
+          <button class="btn btn-success btn-lg btn-block"
+                 type="button"
+                 (click)="updateData()"
+                 > <i class="fas fa-edit"></i> Editar
+         </button>
+
+
+      </div>
+    </div>
+  </div>
+
+

@@ -1,24 +1,17 @@
-
 h1{
   position: relative;
+  left: 5%;
   top: 20px;
-  left: 4%;
 }
 
-
-
-#mdl{
+.card {
   position: relative;
-  left: 8%;
+  width: 400px;
+  height: 600px;
+  left: 30%;
+ 
 }
 
 .form-control{
   background-color: #E3E3E3 ;
 }
-
-#roless {
-  position: relative;
-  left: 12%;
-}
-
-

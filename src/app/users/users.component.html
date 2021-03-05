@@ -1,8 +1,123 @@
-<h1>Crear Usuario</h1>
+<div class="container">
+  <h1  >Lista de Usuarios</h1>
+  <br>
+  <hr>
+</div>
+<br>
+
+  <!--Abrir Modal-->
+    <ng-template #contenido let-modal>
+      <div class="modal-header">
+        <h4>Crear Usuario</h4>
+        <button class="close" aria-label="close" type="button" (click)="modal.dismiss()">
+          <span aria-hidden="true" >&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form >
+            <div class="form-group">
+              <label for="nombreUsuario"><b>Nombre Usuario:</b> </label>
+              <input type="text" name="nombreUsuario" class="form-control"
+                    placeholder="Usuario 1" [(ngModel)]="nombreUsuario">
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="nombreCompleto"><b>Nombre Completo:</b> </label>
+              <input type="text" name="nombreCompleto" class="form-control"
+                     placeholder="Andres Lopez" [(ngModel)]="nombreCompleto" >
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="email"><b>Email:</b></label>
+              <input type="text" name="email" class="form-control"
+                      placeholder="example@gmail.com" [(ngModel)]="email">
+            </div>
+            <br>
+            <div class="form-group">
+              <label for="telefono"><b>Telefono:</b></label>
+              <input type="text" name="telefono" class="form-control"
+                     placeholder="09xxxxxxxx" [(ngModel)]="telefono">
+            </div>
+            <br>
+            <div class="row">
+                <div class="col-6" >
+                  <div class="form-group">
+                    <label for="edad"><b>Edad:</b></label>
+                    <input type="text" name="edad" class="form-control"
+                           placeholder="55" [(ngModel)]="edad">
+                  </div>
+                </div>
+                <div class="col-6" >
+                  <div class="form-group">
+                    <label for="rol"><b>Rol:</b></label>
+                    <input type="text" name="rol" class="form-control"
+                    placeholder="Admin / User / Tester" [(ngModel)]="rol">
+                  </div>
+                </div>
+            </div>
+
+
+            <button class="btn btn-success btn-lg btn-block " type="button" (click)="insertData()"  > <i class="fas fa-check"></i> Crear</button>
+
+          </form>
+      </div>
+    </ng-template>
+  <!--Cerrar Modal-->
+    <div class="row">
+        <div class="col-4">
+          <button id="mdl" type="button" class="btn btn-primary" (click)="modal.open(contenido)" >
+            <i class="far fa-plus-circle"></i> Crear  Nuevo Usuario</button>
+        </div>
+        <div class="col-4">
+
+        </div>
+        <div id="roless" class="col-4">
+          <button id="mdl" type="button" class="btn btn-outline-info" routerLink="rol" >
+            <i class="fas fa-list"></i> Lista Roles</button>
+        </div>
+    </div>
+
+<br>
+<br>
+<div class="container ">
+  <table class="table table-hover  ">
+    <thead class="table-dark">
+      <tr>
+        <td scope="col">#</td>
+        <td scope="col">Usuario</td>
+        <td scope="col">Nombre</td>
+        <td scope="col">Email</td>
+        <td scope="col">Telefono</td>
+        <td scope="col" >Edad</td>
+        <td id="tl" colspan=2  >Acciones</td>
+      </tr>
+    </thead>
+    <tbody>
+        <tr scrope="row"  *ngFor="let users of us " >
+            <td> {{users.id}} </td>
+            <td> <i class="fas fa-user"></i>  {{users.nombreUsuario}} </td>
+            <td> {{users.nombreCompleto}} </td>
+            <td> {{users.email}} </td>
+            <td> {{users.telefono}} </td>
+            <td> {{users.edad}} </td>
+            <td > <button class="btn btn-warning"  routerLink="edit/{{users.id}}">
+                  <i class="fas fa-edit"></i> Editar</button>
+            </td>
+            <td>
+
+              <button  class="btn btn-danger" (click)="deleteData(users.id)" >
+                 <i class="fas fa-trash-alt"></i> Borrar</button>
+            </td>
+        </tr>
+    </tbody>
+    </table>
+</div>
 
 
 
-   <div class="card">
+
+
+   <!--<div class="card">
     <div class="card-body">
       <label for=""> Su Usuario </label>
       <input type="text"
@@ -32,7 +147,8 @@
       <button type="button" class="btn btn-primary btn-sm btn-block "  (click)="crear()" > Crear </button>
 
     </div>
-  </div>
+  </div>-->
+
 
 
 
